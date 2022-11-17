@@ -12,18 +12,6 @@ class Proizvodjac{
         $this->nazivProizvodjaca = $nazivProizvodjaca;
         $this->drzava = $drzava;
     }
-   
-    public static function vratiProizvodjaca($proizvodjacID, mysqli $konekcija)
-    {
-        $sql = "SELECT * FROM proizvodjac WHERE proizvodjacID = ". $proizvodjacID;
-        $resultSet = $konekcija->query($sql);
-
-        $rezultati = [];
-        while($red = $resultSet->fetch_object()){
-            $rezultati[] = $red;
-        }
-        return $rezultati;
-    }
 
     public static function vratiProizvodjace(mysqli $konekcija)
     {
